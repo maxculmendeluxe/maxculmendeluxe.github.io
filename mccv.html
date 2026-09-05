@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Rafael Salazar Paiva | Ingeniero en Informática</title>
+    <!-- Fuente moderna Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ocultar barra de desplazamiento manteniendo la funcionalidad de scroll */
+        html {
+            scrollbar-width: none; /* Para Firefox */
+            -ms-overflow-style: none; /* Para Internet Explorer / Edge antiguo */
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none; /* Para Chrome, Safari, Opera y Edge */
+            width: 0;
+            height: 0;
+        }
+
+        /* Variables de color y diseño optimizadas */
+        :root {
+            --bg-body: #070b19;             /* Fondo azul noche muy oscuro y elegante */
+            --bg-card: rgba(15, 23, 42, 0.92); /* Azul oscuro neutro semitransparente */
+            
+            /* Esquema Fucsia Ajustado para Alto Contraste */
+            --bg-card-fuchsia: rgba(45, 10, 40, 0.92); /* Fondo Fucsia Profundo elegante */
+            --fuchsia-accent: #ff007f;       /* Fucsia neón para detalles */
+            --fuchsia-bright: #ffb3de;       /* Rosa pastel claro para lectura */
+            --fuchsia-border: #e01e84;       /* Borde fucsia brillante */
+            
+            /* Esquema Púrpura Estándar */
+            --purple-accent: #c084fc;       /* Púrpura pastel claro */
+            --purple-dark: #6b21a8;         /* Púrpura profundo */
+            --border-purple: #3b1d6e;       /* Borde púrpura discreto */
+            
+            /* Colores de Texto */
+            --text-main: #f8fafc;           /* Texto principal ultra claro */
+            --text-muted: #cbd5e1;          /* Texto secundario de alta legibilidad */
+            --text-fuchsia-main: #ffffff;   /* Texto principal blanco sobre fucsia */
+            --text-fuchsia-muted: #fbcfe8;  /* Texto secundario claro sobre fucsia */
+            
+            --radius: 12px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(255, 0, 127, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 0, 127, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                linear-gradient(rgba(255, 0, 127, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 127, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(7, 11, 25, 0.88), rgba(7, 11, 25, 0.88)),
+                url('https://lh3.googleusercontent.com/d/1yFTMEPCMFrkI9aDS8QkSDPMnuzuq4xtl');
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px, cover, cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: backgroundGlow 10s ease-in-out infinite alternate;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        @keyframes backgroundGlow {
+            0% {
+                background-position: 0% 0%, 0% 0%, 0 0, 0 0, center, center;
+            }
+            100% {
+                background-position: 10% 20%, -10% -20%, 20px 20px, 20px 20px, center, center;
+            }
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Encabezado */
+        header {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--fuchsia-border);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.2);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fuchsia-accent), #a855f7);
+        }
+
+        .profile-photo-container {
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--fuchsia-accent);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+            background-color: var(--bg-body);
+        }
+
+        .header-info {
+            flex-grow: 1;
+        }
+
+        .header-info h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .header-info .subtitle {
+            font-size: 1.25rem;
+            color: var(--fuchsia-bright);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .personal-details {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 0, 127, 0.25);
+        }
+
+        .contact-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: var(--fuchsia-bright);
+        }
+
+        /* Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-bar {
+                justify-content: center;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilo Base de Tarjetas */
+        .card {
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Tarjeta Estándar (Púrpura/Azul) */
+        .card-standard {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+        }
+
+        .card-standard .section-title {
+            color: #ffffff;
+            border-bottom: 2px solid var(--border-purple);
+        }
+
+        .card-standard .section-title::after {
+            background-color: var(--purple-accent);
+            box-shadow: 0 0 8px var(--purple-accent);
+        }
+
+        /* Tarjeta Destacada FUCSIA */
+        .card-fuchsia {
+            background: linear-gradient(135deg, rgba(50, 10, 42, 0.95), rgba(20, 10, 30, 0.95));
+            border: 1px solid var(--fuchsia-border);
+            box-shadow: 0 10px 25px -5px rgba(255, 0, 127, 0.2);
+        }
+
+        .card-fuchsia .section-title {
+            color: #ffffff;
+            border-bottom: 2px solid rgba(255, 0, 127, 0.4);
+        }
+
+        .card-fuchsia .section-title::after {
+            background-color: var(--fuchsia-accent);
+            box-shadow: 0 0 10px var(--fuchsia-accent);
+        }
+
+        .card-fuchsia p {
+            color: var(--text-fuchsia-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+        }
+
+        /* Experiencia Laboral */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--purple-accent);
+        }
+
+        .company-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .job-desc {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Habilidades (Fucsia Style) */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-tag-fuchsia {
+            background-color: rgba(255, 0, 127, 0.25);
+            color: #ffffff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--fuchsia-border);
+            box-shadow: 0 0 8px rgba(255, 0, 127, 0.25);
+        }
+
+        /* Educación */
+        .edu-list {
+            list-style: none;
+        }
+
+        .edu-item {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-purple);
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        .edu-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Referencias Personales */
+        .ref-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .ref-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-fuchsia .ref-name {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .card-fuchsia .ref-role {
+            font-size: 0.875rem;
+            color: var(--fuchsia-bright);
+            font-weight: 500;
+        }
+
+        .card-fuchsia .ref-contact {
+            font-size: 0.875rem;
+            color: var(--text-fuchsia-muted);
+            margin-top: 0.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header con Foto e Información Personal -->
+        <header>
+            <div class="profile-photo-container">
+                <img src="https://lh3.googleusercontent.com/d/1Q7Qgmzp-vADmdWiHuav2NVxN-W17LaR0" alt="Foto José Rafael Salazar Paiva" class="profile-photo">
+            </div>
+
+            <div class="header-info">
+                <h1>JOSÉ RAFAEL SALAZAR PAIVA</h1>
+                <div class="subtitle">Ingeniero en Informática</div>
+                <div class="personal-details">
+                    C.I. 17075298 | Fecha Nacimiento: 23/08/1983
+                </div>
+                
+                <div class="contact-bar">
+                    <a href="mailto:maxculmen.deluxe@gmail.com" class="contact-item">
+                        📧 maxculmen.deluxe@gmail.com
+                    </a>
+                    <a href="tel:+584129850444" class="contact-item">
+                        📱 0412-9850444 / 0212-5762898
+                    </a>
+                    <span class="contact-item">
+                        📍 La Candelaria, Caracas, Venezuela
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Estructura principal -->
+        <div class="main-grid">
+            
+            <!-- Columna Izquierda -->
+            <main>
+                <!-- SECCIÓN PERFIL PROFESIONAL -->
+                <section class="card card-fuchsia">
+                    <h2 class="section-title">Perfil Profesional</h2>
+                    <p>
+                        Ingeniero en Informática capacitado en la dirección de proyectos, administración de redes corporativas (capacitación Cisco) y soporte técnico de infraestructura computacional. Con formación certificada en ventas profesionales y amplia experiencia comercial en ventas directas, negociación y captación de clientes en frío. Alto dinamismo, orientación al logro, facilidad para el trabajo en equipo y capacidad estratégica para integrar soluciones tecnológicas con objetivos de negocio.
+                    </p>
+                </section>
+
+                <!-- SECCIÓN EXPERIENCIA LABORAL -->
+                <section class="card card-standard">
+                    <h2 class="section-title">Experiencia Laboral</h2>
+                    
+                    <article class="timeline-item">
+                        <div class="job-title">Franquiciado / Ejecutivo de Ventas Directas</div>
+                        <div class="company-date">
+                            <span>RenaWare International</span>
+                            <span>06/06/2010 - 01/06/2011</span>
+                        </div>
+                        <p class="job-desc">
+                            Ejecución de venta directa por catálogo, prospección en frío y abordaje a posibles compradores en calle. Trabajo estructurado en equipo bajo un plan de ventas profesional sostenido por capacitaciones continuas en el área comercial.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="job-title">Director de Proyectos Web y Administrador de Sistemas</div>
+                        <div class="company-date">
+                            <span>Escuela de Vendedores (Valencia, Venezuela)</span>
+                            <span>01/01/2007 - 01/01/2008</span>
+                        </div>
+                        <p class="job-desc">
+                            Liderazgo en la dirección de proyectos web y desarrollo. Responsable de la adecuada administración de las redes internas de computadoras de la compañía y del correcto funcionamiento integral de los equipos informáticos.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="job-title">Soporte Técnico y Atención al Cliente</div>
+                        <div class="company-date">
+                            <span>SERVTEC (Caracas, Venezuela)</span>
+                            <span>01/06/2001 - 01/06/2002</span>
+                        </div>
+                        <p class="job-desc">
+                            Atención directa al público, asesoría comercial para la compra/venta de equipos de computación y especialista en la recarga de cartuchos e insumos informáticos.
+                        </p>
+                    </article>
+                </section>
+
+                <!-- SECCIÓN REFERENCIAS PERSONALES -->
+                <section class="card card-fuchsia">
+                    <h2 class="section-title">Referencias Personales</h2>
+                    
+                    <div class="ref-item">
+                        <div class="ref-name">Janine González</div>
+                        <div class="ref-role">Docente - Instituto Pedagógico de Caracas / U.E.E. Mirian de Vélez</div>
+                        <div class="ref-contact">📱 0414-4875444 | ✉️ janinegonzalezipc@gmail.com</div>
+                    </div>
+
+                    <div class="ref-item">
+                        <div class="ref-name">Maykel Álvarez</div>
+                        <div class="ref-role">Analista de Facturación y Ventas - PDVSA</div>
+                        <div class="ref-contact">📱 0424-2136279 | ✉️ alvarezlmg@pdvsa.com</div>
+                    </div>
+
+                    <div class="ref-item">
+                        <div class="ref-name">Leyther Plúa</div>
+                        <div class="ref-role">Gerente General / Modista Profesional - Diseños Leyther</div>
+                        <div class="ref-contact">📱 0424-2038445 | ✉️ lplualoor2014@gmail.com</div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Columna Derecha -->
+            <aside>
+                <!-- SECCIÓN ESTUDIOS -->
+                <section class="card card-standard">
+                    <h2 class="section-title">Estudios y Cursos</h2>
+                    <ul class="edu-list">
+                        <li class="edu-item">
+                            <div class="edu-degree">Ingeniero en Informática</div>
+                            <div class="edu-meta">Universidad Alejandro de Humboldt (2008)</div>
+                        </li>
+                        <li class="edu-item">
+                            <div class="edu-degree">Curso de Redes Cisco (Módulos I y II)</div>
+                            <div class="edu-meta">Universidad UNITEC, Valencia (2008)<br>Orientado a redes y electrónica.</div>
+                        </li>
+                        <li class="edu-item">
+                            <div class="edu-degree">Cursos de Ventas "Estrellas" y "Profesionales de Ventas"</div>
+                            <div class="edu-meta">Escuela de Vendedores / Door Training International, Valencia (2007)</div>
+                        </li>
+                        <li class="edu-item">
+                            <div class="edu-degree">Curso Ingeniero en Redes KMT</div>
+                            <div class="edu-meta">Instituto de Capacitación Técnica Keys, Los Dos Caminos (2002)</div>
+                        </li>
+                        <li class="edu-item">
+                            <div class="edu-degree">Bachiller</div>
+                            <div class="edu-meta">Colegio Arauca, San Bernardino (2001)</div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECCIÓN HABILIDADES CLAVE -->
+                <section class="card card-fuchsia">
+                    <h2 class="section-title">Habilidades Clave</h2>
+                    <div class="skills-grid">
+                        <span class="skill-tag-fuchsia">Gestión Proyectos Web</span>
+                        <span class="skill-tag-fuchsia">Administración de Redes</span>
+                        <span class="skill-tag-fuchsia">Redes Cisco</span>
+                        <span class="skill-tag-fuchsia">Soporte Informático</span>
+                        <span class="skill-tag-fuchsia">Ventas Profesionales</span>
+                        <span class="skill-tag-fuchsia">Prospección en Frío</span>
+                        <span class="skill-tag-fuchsia">Atención al Público</span>
+                        <span class="skill-tag-fuchsia">Trabajo en Equipo</span>
+                    </div>
+                </section>
+            </aside>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 José Rafael Salazar Paiva. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
