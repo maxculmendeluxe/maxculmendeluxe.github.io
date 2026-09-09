@@ -7,7 +7,7 @@
 <!-- Fuente moderna Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Ocultar barra de desplazamiento manteniendo la funcionalidad de scroll */
 html {
@@ -20,29 +20,24 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
 /* Variables de color y diseño idénticas al CV */
 :root {
   --bg-body: #070b19; /* Fondo azul noche muy oscuro */
   --bg-card: rgba(15, 23, 42, 0.92); /* Azul oscuro neutro semitransparente */
-  
   /* Esquema Fucsia */
   --bg-card-fuchsia: rgba(45, 10, 40, 0.92);
   --fuchsia-accent: #ff007f; /* Fucsia neón */
   --fuchsia-bright: #ffb3de; /* Rosa pastel claro */
   --fuchsia-border: #e01e84; /* Borde fucsia brillante */
-  
   /* Esquema Púrpura */
   --purple-accent: #c084fc; /* Púrpura pastel claro */
   --purple-dark: #6b21a8; /* Púrpura profundo */
   --border-purple: #3b1d6e; /* Borde púrpura discreto */
-  
   /* Esquema Verde Claro */
   --green-accent: #25d366; /* Verde neón / claro */
   --green-bright: #86efac; /* Verde claro pastel */
   --border-green: #15803d; /* Borde verde */
   --shadow-green: 0 0 20px rgba(37, 211, 102, 0.3);
-
   /* Colores de Texto */
   --text-main: #f8fafc; /* Texto principal claro */
   --text-muted: #cbd5e1; /* Texto secundario */
@@ -50,13 +45,11 @@ body::-webkit-scrollbar {
   --shadow-fuchsia: 0 0 20px rgba(255, 0, 127, 0.25);
   --shadow-purple: 0 0 20px rgba(168, 85, 247, 0.2);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-body);
@@ -75,7 +68,6 @@ body {
   padding: 2.5rem 1rem;
   animation: backgroundGlow 10s ease-in-out infinite alternate;
 }
-
 @keyframes backgroundGlow {
   0% {
     background-position: 0% 0%, 0% 0%, 0 0, 0 0, center, center;
@@ -84,12 +76,10 @@ body {
     background-position: 10% 20%, -10% -20%, 20px 20px, 20px 20px, center, center;
   }
 }
-
 .container {
   max-width: 580px;
   margin: 0 auto;
 }
-
 /* Encabezado */
 header {
   background: var(--bg-card);
@@ -103,7 +93,6 @@ header {
   position: relative;
   overflow: hidden;
 }
-
 header::before {
   content: "";
   position: absolute;
@@ -113,7 +102,6 @@ header::before {
   height: 4px;
   background: linear-gradient(90deg, var(--fuchsia-accent), #a855f7);
 }
-
 .profile-photo {
   width: 130px;
   height: 130px;
@@ -124,7 +112,6 @@ header::before {
   background-color: var(--bg-body);
   margin-bottom: 1rem;
 }
-
 header h1 {
   font-size: 2rem;
   font-weight: 800;
@@ -132,19 +119,16 @@ header h1 {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-
 header .subtitle {
   font-size: 1.1rem;
   color: var(--fuchsia-bright);
   font-weight: 600;
   margin-top: 0.2rem;
 }
-
 /* Secciones y Tarjetas */
 .section-block {
   margin-bottom: 2rem;
 }
-
 .section-title {
   font-size: 1.1rem;
   font-weight: 700;
@@ -156,14 +140,12 @@ header .subtitle {
   align-items: center;
   gap: 0.5rem;
 }
-
 .section-title::after {
   content: "";
   flex-grow: 1;
   height: 1px;
   background: linear-gradient(90deg, rgba(255, 0, 127, 0.5), transparent);
 }
-
 /* Botones Alternados */
 .btn {
   display: block;
@@ -180,28 +162,24 @@ header .subtitle {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border: 1px solid transparent;
 }
-
 /* Estilo Fucsia Neón */
 .btn-fuchsia {
   background: linear-gradient(135deg, rgba(50, 10, 42, 0.95), rgba(20, 10, 30, 0.95));
   border-color: var(--fuchsia-border);
   color: #ffffff;
 }
-
 .btn-fuchsia:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, rgba(70, 15, 60, 0.98), rgba(30, 10, 45, 0.98));
   box-shadow: var(--shadow-fuchsia);
   border-color: var(--fuchsia-accent);
 }
-
 /* Estilo Púrpura / Azul */
 .btn-purple {
   background: var(--bg-card);
   border-color: var(--border-purple);
   color: var(--purple-accent);
 }
-
 .btn-purple:hover {
   transform: translateY(-2px);
   background: rgba(30, 27, 75, 0.95);
@@ -209,14 +187,12 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--purple-accent);
 }
-
 /* Estilo Verde Claro (Spotify y WhatsApp) */
 .btn-green {
   background: linear-gradient(135deg, rgba(10, 35, 20, 0.95), rgba(5, 25, 15, 0.95));
   border-color: var(--border-green);
   color: var(--green-bright);
 }
-
 .btn-green:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, rgba(15, 50, 28, 0.98), rgba(8, 35, 20, 0.98));
@@ -224,7 +200,6 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--green-accent);
 }
-
 /* Contenedor Adaptativo de Video Horizontal (16:9) */
 .video-container {
   position: relative;
@@ -238,7 +213,6 @@ header .subtitle {
   margin-top: 1rem;
   background-color: #000;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -247,7 +221,6 @@ header .subtitle {
   height: 100%;
   border: 0;
 }
-
 /* Contenedor Adaptativo de Video Vertical / Shorts (9:16) */
 .short-container {
   position: relative;
@@ -262,7 +235,6 @@ header .subtitle {
   box-shadow: var(--shadow-fuchsia);
   background-color: #000;
 }
-
 .short-container iframe {
   position: absolute;
   top: 0;
@@ -271,7 +243,6 @@ header .subtitle {
   height: 100%;
   border: 0;
 }
-
 footer {
   text-align: center;
   padding: 2rem 0 1rem;
@@ -284,7 +255,8 @@ footer {
 <div class="container">
 <!-- Encabezado de Perfil -->
 <header>
-<img src="https://lh3.googleusercontent.com/d/1JoVIW9_1ukw3wuggT6-S27Xxf46LgJTX" alt="Foto Maxculmen" class="profile-photo">
+<img src="https://lh3.googleusercontent.com/d/1JoVIW9_1ukw3wuggT6-S27Xxf46LgJTX"
+alt="Foto Maxculmen" class="profile-photo">
 <h1>MAXCULMEN</h1>
 <div class="subtitle">Música | Diseño Gráfico | Producción</div>
 </header>
@@ -295,42 +267,46 @@ footer {
 <a href="https://instagram.com/maxculmen" target="_blank" class="btn btn-fuchsia">Instagram</a>
 <a href="https://www.tiktok.com/@maxculmen" target="_blank" class="btn btn-purple">Tik Tok</a>
 <a href="https://www.youtube.com/@maxculmen" target="_blank" class="btn btn-fuchsia">YouTube</a>
-<a href="https://open.spotify.com/artist/2Im8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" class="btn btn-green">Spotify</a>
-
+<a href="https://open.spotify.com/artist/2lm8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" class="btn btn-green">Spotify</a>
 <!-- Video de YouTube Adaptado -->
 <center><h2>Qué opinas de mi cancion Imperative?</h2></center>
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/2RJgfxv0uX0?si=WD--mNywW3swhi0u" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/2RJgfxv0uX0?si=WD--mNywW3swhi0u"
+title="YouTube video player" allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </section>
-
 <!-- SECCIÓN SOCIALS DISEÑO GRÁFICO -->
 <section class="section-block">
 <h2 class="section-title">Socials Diseño Gráfico</h2>
 <a href="https://instagram.com/artegrafico.vip" target="_blank" class="btn btn-fuchsia">Instagram</a>
 </section>
-
 <!-- SECCIÓN SOCIALS PRODUCTOS -->
 <section class="section-block">
 <h2 class="section-title">Socials Productos</h2>
 <!-- Short de YouTube Embed -->
 <div class="short-container">
-  <iframe 
-    src="https://www.youtube.com/embed/I91ZjflbYzQ" 
-    title="EL REGALO PERFECTO 777 🎁" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
+<iframe
+src="https://www.youtube.com/embed/I91ZjflbYzQ"
+title="EL REGALO PERFECTO 777"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 </div>
 <a href="https://instagram.com/perfectgift.culmen" target="_blank" class="btn btn-purple">El regalo perfecto</a>
 </section>
-
 <!-- SECCIÓN CURRÍCULO -->
 <section class="section-block">
 <h2 class="section-title">Currículo</h2>
 <a href="https://maxculmendeluxe.github.io/mccv.html" target="_blank" class="btn btn-fuchsia">Currículo</a>
 </section>
-
+<!-- SECCIÓN BIOGRAFÍA -->
+<section class="section-block">
+<h2 class="section-title">Biografía</h2>
+<a href="https://maxculmendeluxe.github.io/bio" target="_blank" class="btn btn-purple">Biografía</a>
+</section>
 <!-- SECCIÓN CONTÁCTAME -->
 <section class="section-block">
 <h2 class="section-title">Contáctame</h2>
