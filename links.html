@@ -7,7 +7,7 @@
 <!-- Fuente moderna Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Ocultar barra de desplazamiento manteniendo la funcionalidad de scroll */
 html {
@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-/* Variables de color y diseño */
+/* Variables de color y diseño idénticas al CV */
 :root {
   --bg-body: #070b19; /* Fondo azul noche muy oscuro */
   --bg-card: rgba(15, 23, 42, 0.92); /* Azul oscuro neutro semitransparente */
@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
   --border-green: #15803d; /* Borde verde */
   --shadow-green: 0 0 20px rgba(37, 211, 102, 0.3);
 
-  /* Colores de Texto y Estilos Globales */
+  /* Colores de Texto */
   --text-main: #f8fafc; /* Texto principal claro */
   --text-muted: #cbd5e1; /* Texto secundario */
   --radius: 12px;
@@ -225,7 +225,7 @@ header .subtitle {
   border-color: var(--green-accent);
 }
 
-/* Contenedor Adaptativo de Video */
+/* Contenedor Adaptativo de Video Horizontal (16:9) */
 .video-container {
   position: relative;
   width: 100%;
@@ -248,6 +248,30 @@ header .subtitle {
   border: 0;
 }
 
+/* Contenedor Adaptativo de Video Vertical / Shorts (9:16) */
+.short-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1rem auto;
+  padding-bottom: 177.78%; /* Relación de aspecto vertical 9:16 */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--fuchsia-border);
+  box-shadow: var(--shadow-fuchsia);
+  background-color: #000;
+}
+
+.short-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 footer {
   text-align: center;
   padding: 2rem 0 1rem;
@@ -258,63 +282,64 @@ footer {
 </head>
 <body>
 <div class="container">
-  <!-- Encabezado de Perfil -->
-  <header>
-    <img src="https://lh3.googleusercontent.com/d/1JoVIW9_1ukw3wuggT6-S27Xxf46LgJTX" alt="Foto Maxculmen" class="profile-photo">
-    <h1>MAXCULMEN</h1>
-    <div class="subtitle">Música | Diseño Gráfico | Producción</div>
-  </header>
+<!-- Encabezado de Perfil -->
+<header>
+<img src="https://lh3.googleusercontent.com/d/1JoVIW9_1ukw3wuggT6-S27Xxf46LgJTX" alt="Foto Maxculmen" class="profile-photo">
+<h1>MAXCULMEN</h1>
+<div class="subtitle">Música | Diseño Gráfico | Producción</div>
+</header>
+<main>
+<!-- SECCIÓN SOCIALS MÚSICA -->
+<section class="section-block">
+<h2 class="section-title">Socials Música</h2>
+<a href="https://instagram.com/maxculmen" target="_blank" class="btn btn-fuchsia">Instagram</a>
+<a href="https://www.tiktok.com/@maxculmen" target="_blank" class="btn btn-purple">Tik Tok</a>
+<a href="https://www.youtube.com/@maxculmen" target="_blank" class="btn btn-fuchsia">YouTube</a>
+<a href="https://open.spotify.com/artist/2Im8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" class="btn btn-green">Spotify</a>
 
-  <main>
-    <!-- SECCIÓN SOCIALS MÚSICA -->
-    <section class="section-block">
-      <h2 class="section-title">Socials Música</h2>
-      <a href="https://instagram.com/maxculmen" target="_blank" class="btn btn-fuchsia">Instagram</a>
-      <a href="https://www.tiktok.com/@maxculmen" target="_blank" class="btn btn-purple">Tik Tok</a>
-      <a href="https://www.youtube.com/@maxculmen" target="_blank" class="btn btn-fuchsia">YouTube</a>
-      <a href="https://open.spotify.com/artist/2Im8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" class="btn btn-green">Spotify</a>
-      
-      <!-- Video de YouTube Adaptado -->
-      <center><h2>Qué opinas de mi cancion Imperative?</h2></center>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/2RJgfxv0uX0?si=WD--mNywW3swhi0u" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </section>
+<!-- Video de YouTube Adaptado -->
+<center><h2>Qué opinas de mi cancion Imperative?</h2></center>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/2RJgfxv0uX0?si=WD--mNywW3swhi0u" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</section>
 
-    <!-- SECCIÓN SOCIALS DISEÑO GRÁFICO -->
-    <section class="section-block">
-      <h2 class="section-title">Socials Diseño Gráfico</h2>
-      <a href="https://instagram.com/artegrafico.vip" target="_blank" class="btn btn-fuchsia">Instagram</a>
-    </section>
+<!-- SECCIÓN SOCIALS DISEÑO GRÁFICO -->
+<section class="section-block">
+<h2 class="section-title">Socials Diseño Gráfico</h2>
+<a href="https://instagram.com/artegrafico.vip" target="_blank" class="btn btn-fuchsia">Instagram</a>
+</section>
 
-    <!-- SECCIÓN SOCIALS PRODUCTOS -->
-    <section class="section-block">
-      <h2 class="section-title">Socials Productos</h2>
-      <a href="https://instagram.com/perfectgift.culmen" target="_blank" class="btn btn-purple">Instagram</a>
-    </section>
+<!-- SECCIÓN SOCIALS PRODUCTOS -->
+<section class="section-block">
+<h2 class="section-title">Socials Productos</h2>
+<!-- Short de YouTube Embed -->
+<div class="short-container">
+  <iframe 
+    src="https://www.youtube.com/embed/I91ZjflbYzQ" 
+    title="EL REGALO PERFECTO 777 🎁" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+</div>
+<a href="https://instagram.com/perfectgift.culmen" target="_blank" class="btn btn-purple">El regalo perfecto</a>
+</section>
 
-    <!-- SECCIÓN CURRÍCULO -->
-    <section class="section-block">
-      <h2 class="section-title">Currículo</h2>
-      <a href="https://maxculmendeluxe.github.io/mccv.html" target="_blank" class="btn btn-fuchsia">Currículo</a>
-    </section>
+<!-- SECCIÓN CURRÍCULO -->
+<section class="section-block">
+<h2 class="section-title">Currículo</h2>
+<a href="https://maxculmendeluxe.github.io/mccv.html" target="_blank" class="btn btn-fuchsia">Currículo</a>
+</section>
 
-    <!-- SECCIÓN BIOGRAFÍA -->
-    <section class="section-block">
-      <h2 class="section-title">Biografía</h2>
-      <a href="https://maxculmendeluxe.github.io/bio" target="_blank" class="btn btn-purple">Biografía</a>
-    </section>
-
-    <!-- SECCIÓN CONTÁCTAME -->
-    <section class="section-block">
-      <h2 class="section-title">Contáctame</h2>
-      <a href="https://wa.me/584129850444" target="_blank" class="btn btn-green">WhatsApp</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Maxculmen. Todos los derechos reservados.</p>
-  </footer>
+<!-- SECCIÓN CONTÁCTAME -->
+<section class="section-block">
+<h2 class="section-title">Contáctame</h2>
+<a href="https://wa.me/584129850444" target="_blank" class="btn btn-green">WhatsApp</a>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Maxculmen. Todos los derechos reservados.</p>
+</footer>
 </div>
 </body>
 </html>
