@@ -7,7 +7,7 @@
 <!-- Fuente moderna Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Ocultar barra de desplazamiento manteniendo la funcionalidad de scroll */
 html {
@@ -20,8 +20,7 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
-/* Variables de color y diseño */
+/* Variables de color y diseño idénticas al CV */
 :root {
   --bg-body: #070b19;
   --bg-card: rgba(15, 23, 42, 0.92);
@@ -42,23 +41,21 @@ body::-webkit-scrollbar {
   --shadow-fuchsia: 0 0 20px rgba(255, 0, 127, 0.25);
   --shadow-purple: 0 0 20px rgba(168, 85, 247, 0.2);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-body);
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 30%, rgba(255, 0, 127, 0.12) 0%, transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
     linear-gradient(rgba(255, 0, 127, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 0, 127, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(7, 11, 25, 0.85), rgba(7, 11, 25, 0.85)),
-    url('https://lh3.googleusercontent.com/d/1yFTMEPCMFrkI9aDS8QkSDPMnuzuq4xtl');
+    linear-gradient(rgba(7, 11, 25, 0.88), rgba(7, 11, 25, 0.88)),
+    url('https://lh3.googleusercontent.com/d/1yFTMEPCMFrkI9aDS8QKSDPMnuzuq4xtl');
   background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px, cover, cover;
   background-position: center;
   background-attachment: fixed;
@@ -67,28 +64,20 @@ body {
   padding: 2.5rem 1rem;
   animation: backgroundGlow 10s ease-in-out infinite alternate;
 }
-
 @keyframes backgroundGlow {
   0% {
-    background-position: 0% 0%, 0% 0%, 0 0, 0 0, center, center;
+    background-position: 0% 0%, 0% 0%, 0px 0px, 0px 0px, center, center;
   }
   100% {
     background-position: 10% 20%, -10% -20%, 20px 20px, 20px 20px, center, center;
   }
 }
-
 .container {
   max-width: 580px;
   margin: 0 auto;
 }
-
-/* Encabezado principal (Tarjeta de Perfil con fondo) */
 header {
-  background-image: 
-    linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)),
-    url('https://lh3.googleusercontent.com/d/1yFTMEPCMFrkI9aDS8QkSDPMnuzuq4xtl');
-  background-size: cover;
-  background-position: center;
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 2px solid var(--fuchsia-border);
   padding: 2rem 1.5rem;
@@ -99,7 +88,6 @@ header {
   position: relative;
   overflow: hidden;
 }
-
 header::before {
   content: "";
   position: absolute;
@@ -109,7 +97,6 @@ header::before {
   height: 4px;
   background: linear-gradient(90deg, var(--fuchsia-accent), #a855f7);
 }
-
 .profile-photo {
   width: 130px;
   height: 130px;
@@ -120,7 +107,6 @@ header::before {
   background-color: var(--bg-body);
   margin-bottom: 1rem;
 }
-
 header h1 {
   font-size: 2rem;
   font-weight: 800;
@@ -128,19 +114,15 @@ header h1 {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-
 header .subtitle {
   font-size: 1.1rem;
   color: var(--fuchsia-bright);
   font-weight: 600;
   margin-top: 0.2rem;
 }
-
-/* Secciones y Tarjetas */
 .section-block {
   margin-bottom: 2rem;
 }
-
 .section-title {
   font-size: 1.1rem;
   font-weight: 700;
@@ -152,15 +134,18 @@ header .subtitle {
   align-items: center;
   gap: 0.5rem;
 }
-
 .section-title::after {
   content: "";
   flex-grow: 1;
   height: 1px;
   background: linear-gradient(90deg, rgba(255, 0, 127, 0.5), transparent);
 }
-
-/* Botones Alternados */
+.video-title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  color: #ffffff;
+}
 .btn {
   display: block;
   width: 100%;
@@ -176,28 +161,22 @@ header .subtitle {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border: 1px solid transparent;
 }
-
-/* Estilo Fucsia Neón */
 .btn-fuchsia {
   background: linear-gradient(135deg, rgba(50, 10, 42, 0.95), rgba(20, 10, 30, 0.95));
   border-color: var(--fuchsia-border);
   color: #ffffff;
 }
-
 .btn-fuchsia:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, rgba(70, 15, 60, 0.98), rgba(30, 10, 45, 0.98));
   box-shadow: var(--shadow-fuchsia);
   border-color: var(--fuchsia-accent);
 }
-
-/* Estilo Púrpura / Azul */
 .btn-purple {
   background: var(--bg-card);
   border-color: var(--border-purple);
   color: var(--purple-accent);
 }
-
 .btn-purple:hover {
   transform: translateY(-2px);
   background: rgba(30, 27, 75, 0.95);
@@ -205,14 +184,11 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--purple-accent);
 }
-
-/* Estilo Verde Claro (Spotify y WhatsApp) */
 .btn-green {
   background: linear-gradient(135deg, rgba(10, 35, 20, 0.95), rgba(5, 25, 15, 0.95));
   border-color: var(--border-green);
   color: var(--green-bright);
 }
-
 .btn-green:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, rgba(15, 50, 28, 0.98), rgba(8, 35, 20, 0.98));
@@ -220,8 +196,6 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--green-accent);
 }
-
-/* Contenedor Adaptativo de Video Horizontal (16:9) */
 .video-container {
   position: relative;
   width: 100%;
@@ -234,7 +208,6 @@ header .subtitle {
   margin-top: 1rem;
   background-color: #000;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -243,8 +216,6 @@ header .subtitle {
   height: 100%;
   border: 0;
 }
-
-/* Contenedor Adaptativo de Video Vertical / Shorts (9:16) Reducido a 2/3 */
 .short-container {
   position: relative;
   width: 66.66%;
@@ -257,7 +228,6 @@ header .subtitle {
   box-shadow: var(--shadow-fuchsia);
   background-color: #000;
 }
-
 .short-container iframe {
   position: absolute;
   top: 0;
@@ -266,7 +236,6 @@ header .subtitle {
   height: 100%;
   border: 0;
 }
-
 footer {
   text-align: center;
   padding: 2rem 0 1rem;
@@ -277,43 +246,31 @@ footer {
 </head>
 <body>
 <div class="container">
-  <!-- Encabezado de Perfil -->
   <header>
     <img src="https://lh3.googleusercontent.com/d/1JoVIW9_1ukw3wuggT6-S27Xxf46LgJTX" alt="Foto Maxculmen" class="profile-photo">
     <h1>MAXCULMEN</h1>
     <div class="subtitle">Música | Diseño Gráfico | Producción</div>
   </header>
-
   <main>
-    <!-- SECCIÓN SOCIALS MÚSICA -->
     <section class="section-block">
-      <center>
-        <h2>
-          <marquee direction="left" scrollamount="6">
-            &lt;--- Hola soy el asistente virtual de Max Culmen
-          </marquee>
-        </h2>
-      </center>
       <h2 class="section-title">Socials Música</h2>
-      <a href="https://instagram.com/maxculmen" target="_blank" class="btn btn-fuchsia">Instagram</a>
-      <a href="https://www.tiktok.com/@maxculmen" target="_blank" class="btn btn-purple">TikTok</a>
-      <a href="https://www.youtube.com/@maxculmen" target="_blank" class="btn btn-fuchsia">YouTube</a>
-      <a href="https://open.spotify.com/artist/2lm8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" class="btn btn-green">Spotify</a>
-      
-      <center><h2>Qué opinas de mi cancion Imperative?</h2></center>
+      <a href="https://instagram.com/maxculmen" target="_blank" rel="noopener noreferrer" class="btn btn-fuchsia">Instagram</a>
+      <a href="https://www.tiktok.com/@maxculmen" target="_blank" rel="noopener noreferrer" class="btn btn-purple">TikTok</a>
+      <a href="https://www.youtube.com/@maxculmen" target="_blank" rel="noopener noreferrer" class="btn btn-fuchsia">YouTube</a>
+      <a href="https://open.spotify.com/artist/2lm8vX0uQoEJdo8GNtjtDE?si=60YrJLXLRqqdLjW_tGHkIQ&utm_source=copy-link" target="_blank" rel="noopener noreferrer" class="btn btn-green">Spotify</a>
+      <h2 class="video-title">Qué opinas de mi canción Imperative?</h2>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/2RJgfxv0uX0?si=WD--mNywW3swhi0u" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- SECCIÓN SOCIALS DISEÑO GRÁFICO -->
     <section class="section-block">
       <h2 class="section-title">Socials Diseño Gráfico</h2>
-      <a href="https://instagram.com/artegrafico.vip" target="_blank" class="btn btn-fuchsia">Instagram</a>
+      <a href="https://instagram.com/artegrafico.vip" target="_blank" rel="noopener noreferrer" class="btn btn-fuchsia">Instagram</a>
     </section>
 
     <!-- SECCIÓN SOCIALS PRODUCTOS -->
-        <section class="section-block">
+    <section class="section-block">
       <h2 class="section-title">Socials Productos</h2>
       <div class="short-container">
         <iframe src="https://www.youtube.com/embed/I91ZjflbYzQ" title="EL REGALO PERFECTO 777" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -321,46 +278,38 @@ footer {
       <a href="https://instagram.com/perfectgift.culmen" target="_blank" rel="noopener noreferrer" class="btn btn-purple">El regalo perfecto</a>
     </section>
 
-
-
-
-    <!-- SECCIÓN CURRÍCULO -->
     <section class="section-block">
       <h2 class="section-title">Currículo</h2>
-      <a href="https://maxculmendeluxe.github.io/mccv.html" target="_blank" class="btn btn-fuchsia">Curriculo</a>
+      <a href="https://maxculmendeluxe.github.io/mccv.html" target="_blank" rel="noopener noreferrer" class="btn btn-fuchsia">Currículo</a>
     </section>
 
-    <!-- SECCIÓN BIOGRAFÍA -->
     <section class="section-block">
       <h2 class="section-title">Biografía</h2>
-      <a href="https://maxculmendeluxe.github.io/bio" target="_blank" class="btn btn-purple">Biografía</a>
+      <a href="https://maxculmendeluxe.github.io/bio" target="_blank" rel="noopener noreferrer" class="btn btn-purple">Biografía</a>
     </section>
 
-    <!-- SECCIÓN CONTÁCTAME -->
     <section class="section-block">
       <h2 class="section-title">Contáctame</h2>
-      <a href="https://wa.me/584129850444" target="_blank" class="btn btn-green">WhatsApp</a>
+      <a href="https://wa.me/584129850444" target="_blank" rel="noopener noreferrer" class="btn btn-green">WhatsApp</a>
     </section>
 
-    <!-- SECCIÓN CURSOS GRATUITOS -->
     <section class="section-block">
       <h2 class="section-title">Cursos Gratuitos</h2>
-      <a href="https://maxculmendeluxe.github.io/cursosfree" target="_blank" class="btn btn-fuchsia">Cursos Gratuitos</a>
+      <a href="https://maxculmendeluxe.github.io/cursosfree" target="_blank" rel="noopener noreferrer" class="btn btn-fuchsia">Cursos Gratuitos</a>
     </section>
 
-    <!-- SECCIÓN NOTICIAS TECNOLOGÍA -->
     <section class="section-block">
       <h2 class="section-title">Noticias Tecnología</h2>
-      <center><h2>Agentes de IA</h2></center>
+      <h2 class="video-title">Agentes de IA</h2>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/nT17ASj4gdQ" title="Agentes de IA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
 
     <section class="section-block">
-      <center><h2>El fin de la IA en la nube</h2></center>
+      <h2 class="video-title">El fin de la IA en la nube</h2>
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/-8MIAwDFF5M" title="El fin de la IA en la nube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/-8MIAWDFF5M" title="El fin de la IA en la nube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
   </main>
@@ -371,3 +320,4 @@ footer {
 </div>
 </body>
 </html>
+
