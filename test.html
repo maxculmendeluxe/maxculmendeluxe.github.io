@@ -192,6 +192,10 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--green-accent);
 }
+/* Efecto al hacer clic (simula selección grisácea acordada) */
+.btn:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
 /* Contenedor del Emoji interactivo en la esquina superior derecha */
 .btn-emoji-corner {
   position: absolute;
@@ -337,15 +341,16 @@ footer {
 </footer>
 </div>
 
-<!-- Script dinámico para el cambio de emoji por scroll / hover / clic -->
+<!-- Script dinámico optimizado con Intersection Observer para scroll secuencial en móviles -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".btn");
 
-  // 1. Intersection Observer para simular interactividad al hacer scroll (móviles/escritorio)
+  // Configuración estricta para detectar el botón centrado en la vista del móvil
   const observerOptions = {
     root: null,
-    threshold: 0.3
+    rootMargin: "-35% 0px -35% 0px", // Zona de enfoque central en pantalla
+    threshold: 0
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -354,8 +359,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!emojiSpan) return;
 
       if (entry.isIntersecting) {
-        // Al entrar en el rango de visión, cambia dinámicamente a una seña de atención cercana o mantiene la vibra
-        // Aquí mantenemos el signo de exclamación levitando con dinamismo por scroll
+        // Transforma a la manito arriba estándar y amarilla cuando el botón entra en el foco central
+        emojiSpan.textContent = "👍";
+      } else {
+        // Regresa al signo de exclamación al salir de la zona central
+        emojiSpan.textContent = "❕";
       }
     });
   }, observerOptions);
@@ -365,22 +373,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const emojiSpan = button.querySelector(".btn-emoji-corner");
 
-    // 2. Efecto de hover en PC (cambia temporalmente al pulgar arriba al pasar el mouse)
+    // Efecto hover para PC (cambia temporalmente a la manito)
     button.addEventListener("mouseenter", () => {
       if (emojiSpan) emojiSpan.textContent = "👍";
     });
 
     button.addEventListener("mouseleave", () => {
+      // Revalida según posición actual o regresa a exclamación
       if (emojiSpan) emojiSpan.textContent = "❕";
     });
 
-    // 3. Efecto al hacer clic (confirma con el dedo arriba)
+    // Efecto al hacer clic (confirma con la manito y destello de selección)
     button.addEventListener("click", () => {
       if (emojiSpan) {
         emojiSpan.textContent = "👍";
-        setTimeout(() => {
-          emojiSpan.textContent = "❕";
-        }, 1500); // Vuelve al estado inicial después de un momento y tras la redirección
       }
     });
   });
