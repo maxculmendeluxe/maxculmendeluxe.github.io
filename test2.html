@@ -152,7 +152,7 @@ header .subtitle {
   transition: all 0.25s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border: 1px solid transparent;
-  position: relative;
+  position: relative; /* Clave para posicionar el emoji absolutamente */
 }
 /* Estilo Fucsia Neón */
 .btn-fuchsia {
@@ -179,7 +179,7 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--purple-accent);
 }
-/* Estilo Verde Claro */
+/* Estilo Verde Claro (Spotify y WhatsApp) */
 .btn-green {
   background: linear-gradient(135deg, rgba(10, 35, 20, 0.95), rgba(5, 25, 15, 0.95));
   border-color: var(--border-green);
@@ -192,11 +192,11 @@ header .subtitle {
   color: #ffffff;
   border-color: var(--green-accent);
 }
-/* Efecto al hacer clic */
+/* Efecto al hacer clic (simula selección grisácea acordada) */
 .btn:active {
   background-color: rgba(255, 255, 255, 0.15) !important;
 }
-/* Contenedor del Emoji interactivo */
+/* Contenedor del Emoji interactivo en la esquina superior derecha */
 .btn-emoji-corner {
   position: absolute;
   top: 8px;
@@ -324,31 +324,36 @@ footer {
 </section>
 <!-- SECCIÓN NOTICIAS TECNOLOGÍA -->
 <section class="section-block">
+<h2 class="section-title">Noticias Tecnología</h2>
 <center><h2>Agentes de IA</h2></center>
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/nT17ASj4gdQ" title="Agentes de IA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-</section>
-<section class="section-block">
-<center><h2>El fin de la IA en la nube</h2></center>
+
+<center><h2>el fin de la ia en la nube</h2></center>
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/-8MIAwDFF5M" title="El fin de la IA en la nube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/-8MIAwDFF5M" title="YouTube video player"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen></iframe>
 </div>
 </section>
+
 </main>
 <footer>
 <p>&copy; 2026 Maxculmen. Todos los derechos reservados.</p>
 </footer>
 </div>
 
-<!-- Script dinámico optimizado con Intersection Observer -->
+<!-- Script dinámico optimizado con Intersection Observer para scroll secuencial en móviles -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".btn");
 
+  // Configuración estricta para detectar el botón centrado en la vista del móvil
   const observerOptions = {
     root: null,
-    rootMargin: "-35% 0px -35% 0px",
+    rootMargin: "-35% 0px -35% 0px", // Zona de enfoque central en pantalla
     threshold: 0
   };
 
@@ -358,8 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!emojiSpan) return;
 
       if (entry.isIntersecting) {
+        // Transforma a la manito arriba estándar y amarilla cuando el botón entra en el foco central
         emojiSpan.textContent = "👍";
       } else {
+        // Regresa al signo de exclamación al salir de la zona central
         emojiSpan.textContent = "❕";
       }
     });
@@ -370,14 +377,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const emojiSpan = button.querySelector(".btn-emoji-corner");
 
+    // Efecto hover para PC (cambia temporalmente a la manito)
     button.addEventListener("mouseenter", () => {
       if (emojiSpan) emojiSpan.textContent = "👍";
     });
 
     button.addEventListener("mouseleave", () => {
+      // Revalida según posición actual o regresa a exclamación
       if (emojiSpan) emojiSpan.textContent = "❕";
     });
 
+    // Efecto al hacer clic (confirma con la manito y destello de selección)
     button.addEventListener("click", () => {
       if (emojiSpan) {
         emojiSpan.textContent = "👍";
@@ -388,3 +398,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
